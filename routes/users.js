@@ -20,7 +20,7 @@ router.get("/:id", middlewear.isLoggedIn, (req, res) =>{
             req.flash("error", "Could Not Find User");
             return res.redirect("back");
         }
-        res.send(foundUser);
+        res.redirect("/campgrounds");
     })
 });
 
