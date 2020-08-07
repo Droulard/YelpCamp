@@ -1,0 +1,49 @@
+.thumbnail img{
+    width: 100%;
+}
+
+.thumbnail{
+    padding: 0;
+}
+
+.thumbnail .caption-full {
+    padding: 9px;
+}
+
+#deleteForm{
+    display: inline-block;
+    width: 100%;
+}
+.dropdown-menu {
+    width: 10%; 
+    padding: 0 0;
+    margin: 0 0;
+}
+  
+.editComment{
+   width: 100%;
+}
+
+a.unlink {
+    color: inherit;
+    background-color:inherit;
+}
+a.unlink:hover {
+    color: inherit;
+    text-decoration: none;
+    background-color: inherit;
+}
+
+
+#TransitionSection{
+    background-size: cover;
+    background-position: 50% 50%; 
+    background-repeat: no-repeat;
+    width: 100%;
+    color: whitesmoke;
+}
+
+#map{
+    height: 400px;
+    width: 100%;
+}

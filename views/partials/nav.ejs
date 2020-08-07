@@ -1,0 +1,30 @@
+<nav class="navbar navbar-default ">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/" >YelpCamp</a>
+            <a href="/campgrounds" class=" btn btn-md glyphicon glyphicon-th-large" ></a>
+        </div>
+        <div class="collapse navbar-collapse" id="userInput">
+            <ul class="navbar-nav navbar-right nav" >
+                <%   if(!currentUser){ %>
+                    <li><a href="/login">Login</a></li>
+                    <li><a href="/register">Sign Up</a></li>
+                 <% }else{ %>
+                    <div class="dropdown">
+                        <a href="#" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            <%= currentUser.username %> <span class="glyphicon glyphicon-user"></span>
+                        </a>
+                        
+                        <ul class="dropdown-menu">
+                            <% if (currentUser.isAdmin) { %> 
+                                <li><a href="/userlist">User List</a></li>
+                            <% } %> 
+                            <li><a href="/switchUsers">Change Users</a></li>
+                            <li><a href="/logout">Log Out</a></li>
+                        </ul>
+                    </div>
+                 <% } %>
+            </ul>
+        </div>
+    </div>
+</nav>

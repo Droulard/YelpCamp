@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"> -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/style.css">
+        <title> Yelp Camp</title>
+    </head>
+    <body data-spy="scroll" data-target="#pageSection">
+
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="/" >YelpCamp</a>
+                        <a href="/campgrounds" class=" btn btn-md glyphicon glyphicon-th-large" ></a>
+
+                    <%   if(currentUser){ %>
+                </div>
+                        <ul class="navbar-nav navbar-right nav">
+                            <div class="dropdown">
+                                <a href="#" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                    <%= currentUser.username %> <span class="glyphicon glyphicon-user"></span>
+                                </a>
+                                
+                                <ul class="dropdown-menu">
+                                    <% if (currentUser.isAdmin) { %> 
+                                        <li><a href="/switchUsers">Change Users</a></li>
+                                    <% } %> 
+                                    <li><a href="/users/edit/<%= currentUser._id %>  ">Edit Profile</a></li>
+                                    <li><a href="/users">User List</a></li>
+                                    <li><a href="/logout">Log Out</a></li>
+                                </ul>
+                            </div>
+                        </ul>
+                    <% }else{ %>
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#UserInput" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                          </button>
+                    </div>
+
+                        <div class="collapse navbar-collapse" id="UserInput">
+                            <ul class="navbar-nav navbar-right nav">
+                                <%   if(!currentUser){ %>
+                                    <li><a href="/login">Login</a></li>
+                                    <li><a href="/register">Sign Up</a></li>
+                                <% } %> 
+                            </ul>
+                        </div>
+                    <% } %>
+                </div>
+            </nav>
+
+
+        <div class="container">
+            <% if (success && success.length > 0) { %>
+                <div class="alert alert-success" role="alert">
+                    <%= success %> 
+                </div>
+            <% } %> 
+
+            <% if (error && error.length > 0) { %> 
+            <div class="alert alert-danger" role="alert">
+                <%= error %> 
+            </div>
+        <% } %> 
+        </div>

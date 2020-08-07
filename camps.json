@@ -1,0 +1,6 @@
+[
+{"name": "Salmon Creek",  "image" : "https://images.unsplash.com/photo-1454614146802-84004a53428d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"},
+{"name": "Camp Salmon",   "image" : "https://images.unsplash.com/photo-1570207396332-f8a67821adf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"},
+{"name": "Camp Yosemiti", "desc": "Camp at Yosemiti National Park" , "image" : "https://images.unsplash.com/photo-1516173953256-444587fcd3ce?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"},
+{"name": "Camp BearClaw", "image" : "https://images.unsplash.com/photo-1552355170-c8337700279c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"}
+]
