@@ -19,14 +19,16 @@ const   express             = require("express"),
         authRoutes          = require("./routes/index");
 
 app.locals.moment = require('moment');
-mongoose.connect("mongodb://localhost:27017/yelp_camp", {
+
+mongoose.connect(process.env.MONGOURL, {
+    useUnifiedTopology: true,
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useFindAndModify: false,
     useCreateIndex: true
 })
 .then(() => console.log("Connected to DB!"))
-.catch(error => console.log(error));
+.catch(error => console.log(error.message));
 
 app.use(bodyParser.urlencoded({extended:true}));
 app.set("view engine", "ejs");
