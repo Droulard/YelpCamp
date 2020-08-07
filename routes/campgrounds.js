@@ -32,7 +32,7 @@ router.get("/", function(req, res){
 
 
 // CREATE CAMPGROUND
-router.post("/",  middlewear.isLoggedIn, function(req, res){
+router.post("/",  middlewear.isAdmin, function(req, res){
     // Get Data from form and add to array
     let name = req.body.name;
     let link = req.body.link;
@@ -43,7 +43,7 @@ router.post("/",  middlewear.isLoggedIn, function(req, res){
 
     geocoder.geocode(req.body.location, (err, data) =>{
         if(err || !data.length){
-            req.flash("err", "Erro Could not process location");
+            req.flash("err", "Error Could not process location");
             res.redirect("back");
         }
 

@@ -20,7 +20,8 @@ router.get("/:id", middlewear.isLoggedIn, (req, res) =>{
             req.flash("error", "Could Not Find User");
             return res.redirect("back");
         }
-        res.redirect("/campgrounds");
+        req.flash("error", "Page Under Construction")
+        res.redirect("back");
     })
 });
 

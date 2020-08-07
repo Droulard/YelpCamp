@@ -5,9 +5,13 @@
         <div class="container" >
             <h1>Welcome to YelpCamp</h1>
             <p>Vist the world!</p>
+            <% if (currentUser) {%> 
             <p>
-                <a class="btn btn-primary btn-lg" href="/campgrounds/new">  Add New Campground  </a>
+                <% if(currentUser.isAdmin) { %> 
+                    <a class="btn btn-primary btn-lg" href="/campgrounds/new">  Add New Campground  </a>
+                <%  } %> 
             </p>
+        <% } %> 
         </div>
     </header>
     <div class="row">
