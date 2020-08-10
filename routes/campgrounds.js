@@ -5,6 +5,7 @@ var Campground      = require("../models/campground");
 var Comment         = require("../models/comments");
 const middlewear    = require("../middlewear");
 const apiKey        = process.env.MAP_KEY;
+const GOOGLEKEY     = process.env.GOOLEAPI;
 const NodeGeo       = require("node-geocoder");
 
 var options = {
@@ -77,7 +78,7 @@ router.get("/:id", (req, res) =>{
             res.redirect("/campgrounds")
         }else{
             // Render Show Template with Campground;
-            res.render("campgrounds/showplace", {campground: foundCamp, apiKey: apiKey});
+            res.render("campgrounds/showplace", {campground: foundCamp, apiKey: apiKey, APIKEY: GOOGLEKEY});
         }
     });
 });
